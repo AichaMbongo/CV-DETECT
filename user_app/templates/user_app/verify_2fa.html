@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Factor Authentication</title>
+</head>
+<body>
+    <h1>Two-Factor Authentication</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="verification_code">Enter your 2FA code:</label>
+        <input type="text" name="verification_code" id="verification_code">
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>

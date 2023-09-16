@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enable 2FA</title>
+</head>
+<body>
+    <h1>Enable Two-Factor Authentication</h1>
+    {% if provisioning_url %}
+        <p>Scan the QR code below using your 2FA app:</p>
+        <img src="{{ provisioning_url }}" alt="QR Code">
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Enable 2FA</button>
+        </form>
+    {% endif %}
+</body>
+</html>
